@@ -1,0 +1,14 @@
+.front-page-background {
+  background: url(images/front-page-background.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.front-page-buttons {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  top: 10%;
+}

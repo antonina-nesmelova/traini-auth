@@ -1,0 +1,15 @@
+{
+    "login": {
+        "button": "Přihlásit se",
+        "title": "Vítejte zpátky!",
+        "password_placeholder": "Heslo",
+        "email_placeholder": "Email adresa"
+    },
+    "signup": {
+        "button": "Registrovat se",
+        "title": "Registrace",
+        "password_placeholder": "Zvolte heslo",
+        "email_placeholder": "Vaš email",
+        "name_placeholder": "Vaše jméno"
+    }
+}

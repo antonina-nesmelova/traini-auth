@@ -1,0 +1,15 @@
+{
+    "login": {
+        "button": "Login",
+        "title": "Welcome back!",
+        "password_placeholder": "Password",
+        "email_placeholder": "Your email address"
+    },
+    "signup": {
+        "button": "Sign up",
+        "title": "Registration",
+        "password_placeholder": "Choose a safe password",
+        "email_placeholder": "Your email address",
+        "name_placeholder": "Your name"
+    }
+}
