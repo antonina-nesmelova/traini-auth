@@ -1,17 +1,7 @@
 import React, { Component } from 'react'
-import { AUTH_TOKEN } from '../constants'
-import gql from 'graphql-tag'
-import { Mutation } from 'react-apollo'
+import { AUTH_TOKEN } from '../../constants'
 import { Link } from "react-router-dom";
 import { withTranslation } from 'react-i18next';
-
-const SIGNUP_MUTATION = gql`
-    mutation SignupMutation($email: String!, $password: String!, $name: String!) {
-        signup(email: $email, password: $password, name: $name) {
-            token
-        }
-    }
-`
 
 class SignUp extends Component {
     state = {
@@ -65,17 +55,10 @@ class SignUp extends Component {
                                 </div>
                                 <div className="row">
                                     <div className="col-lg-7">
-                                        <Mutation
-                                            mutation={SIGNUP_MUTATION}
-                                            variables={{ email, password, name }}
-                                            onCompleted={data => this._confirm(data)}
-                                        >
-                                            {mutation => (
-                                                <button className="btn btn-primary shadow w-100" onClick={mutation}>
+
+                                                <button className="btn btn-primary shadow w-100">
                                                     {t('signup.button')}
                                                 </button>
-                                            )}
-                                        </Mutation>
                                     </div>
                                     <div className="col-lg-5 text-center my-auto">
                                         <Link to="/login" >

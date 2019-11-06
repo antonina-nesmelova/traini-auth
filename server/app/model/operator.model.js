@@ -1,11 +1,11 @@
 module.exports = (sequelize, Sequelize) => {
 	const Operator = sequelize.define('operator', {
-	  name: {
-		type: Sequelize.STRING
-	  },
-	  birthDate: {
-		  type: Sequelize.DATE
-	  },
+		name: {
+			type: Sequelize.STRING
+		},
+		birthDate: {
+			type: Sequelize.DATE
+		},
 		email: {
 			type: Sequelize.STRING,
 			isUnique :true,
@@ -14,7 +14,7 @@ module.exports = (sequelize, Sequelize) => {
 				isEmail : true
 			}
 		}
-	});
+	})
 	
-	return Operator;
+	return Operator
 }
