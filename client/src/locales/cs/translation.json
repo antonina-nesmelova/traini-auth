@@ -3,6 +3,7 @@
         "button": "Přihlásit se",
         "title": "Vítejte zpátky!",
         "password_placeholder": "Heslo",
+        "logout": "Odhlasit se",
         "email_placeholder": "Email adresa"
     },
     "signup": {
@@ -11,5 +12,11 @@
         "password_placeholder": "Zvolte heslo",
         "email_placeholder": "Vaš email",
         "name_placeholder": "Vaše jméno"
+    },
+    "sidebar": {
+        "dashboard": "Dashboard",
+        "cosmonauts": "Kosmonauty",
+        "rockets": "Rakety",
+        "flights": "Lety"
     }
 }

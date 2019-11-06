@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
 import { withTranslation } from 'react-i18next';
+import Header from './Header';
 
 class FrontPage extends Component {
     render() {
@@ -9,6 +10,7 @@ class FrontPage extends Component {
 
         return (
             <div>
+                <Header />
                 <div className="row front-page-buttons">
                     <div className="col-lg-6 text-center">
                         <Link to="/login" className="btn btn-primary btn-lg ml-5">

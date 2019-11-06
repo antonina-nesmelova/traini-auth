@@ -1,16 +1,15 @@
 import {
 	TOGGLE_LOCATIZATION
 } from '../constants/actionTypes';
-import i18n from "../../i18n";
+import i18n from '../../i18n';
 
-export default (state = 'cs', action) => {
+export default (state = {localization: 'en'}, action) => {
 	switch (action.type) {
 		case TOGGLE_LOCATIZATION:
-			console.log(action.payload.newLang)
-			i18n.changeLanguage(action.payload.newLang);
+			const newLang = state.localization === 'en' ? 'cs' : 'en'
+			i18n.changeLanguage(newLang);
 			return {
-				...state,
-				inProgress: action.payload.newLang
+				localization: newLang
 			};
 		default:
 			return state;

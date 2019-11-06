@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
-import SideBarItem from "./SideBarItem";
+import SideBarItem from './SideBarItem';
 
 class SideBar extends Component {
 
 	render() {
-		const { t, menuItems } = this.props;
+		const { menuItems } = this.props;
 
 		return (
 			<div id="sidebar" className="sidebar py-3">
@@ -13,7 +13,7 @@ class SideBar extends Component {
 					{menuItems.map((item, index) => {
 						item.active = this.props.location.pathname.match(`${item.name}$`)
 						return (
-							<SideBarItem item={item} />
+							<SideBarItem key={item.name} item={item} />
 						)
 					})}
 				</ul>

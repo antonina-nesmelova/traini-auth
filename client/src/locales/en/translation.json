@@ -3,6 +3,7 @@
         "button": "Login",
         "title": "Welcome back!",
         "password_placeholder": "Password",
+        "logout": "Logout",
         "email_placeholder": "Your email address"
     },
     "signup": {
@@ -11,5 +12,11 @@
         "password_placeholder": "Choose a safe password",
         "email_placeholder": "Your email address",
         "name_placeholder": "Your name"
+    },
+    "sidebar": {
+        "dashboard": "Dashboard",
+        "cosmonauts": "Cosmonauts",
+        "rockets": "Rockets",
+        "flights": "Flights"
     }
 }

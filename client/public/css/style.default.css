@@ -1365,7 +1365,7 @@ button {
   color: #fff;
 }
 
-.sidebar-link.active i, .sidebar-link:focus i {
+.sidebar-link.active svg, .sidebar-link:focus svg {
   color: #fff !important;
 }
 

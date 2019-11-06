@@ -1,38 +1,36 @@
 import React, { Component } from 'react'
-import i18n from "../i18n";
-import { withTranslation } from 'react-i18next';
+import { TOGGLE_LOCATIZATION } from '../../redux/constants/actionTypes';
+import {connect} from 'react-redux';
+
+const mapStateToProps = state => ( state.localization );
+
+const mapDispatchToProps = dispatch => ({
+	onToggle: value =>
+		dispatch({ type: TOGGLE_LOCATIZATION })
+});
 
 class ToggleLocalizationButton extends Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {
-			currentLocalisation: i18n.language
-		}
-	}
-
-	changeLanguage = (lng) => {
-		this.setState({
-			currentLocalisation: lng
-		});
-		i18n.changeLanguage(lng);
+		this.onToggle = ev => this.props.onToggle()
 	}
 
 	render() {
 		return (
 			<div>
-				{this.state.currentLocalisation === 'cs' ? (
+				{this.props.localization === 'cs' ? (
 					<button
 						className="btn btn-primary float-lg-right m-2 p-2"
-						onClick={() => this.changeLanguage('en')}>EN</button>
+						onClick={() => this.onToggle()}>EN</button>
 				) : (
 					<button
 						className="btn btn-primary float-lg-right m-2 p-2"
-						onClick={() => this.changeLanguage('cs')}>CS</button>
+						onClick={() => this.onToggle()}>CS</button>
 				)}
 			</div>
 		)
 	}
 }
 
-export default ToggleLocalizationButton
+export default connect(mapStateToProps, mapDispatchToProps)(ToggleLocalizationButton)

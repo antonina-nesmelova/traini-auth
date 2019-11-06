@@ -3,8 +3,8 @@ module.exports = (sequelize, Sequelize) => {
 		name: {
 			type: Sequelize.STRING
 		},
-		birthDate: {
-			type: Sequelize.DATE
+		password: {
+			type: Sequelize.STRING
 		},
 		email: {
 			type: Sequelize.STRING,

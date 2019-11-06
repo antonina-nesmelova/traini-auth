@@ -1,17 +1,31 @@
-import React, { Suspense } from 'react';
+import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
+import { configureStore } from './redux/store'
+import { ConnectedRouter } from 'connected-react-router';
+import { BrowserRouter } from 'react-router-dom'
 import './styles/index.css';
 import App from './components/App';
-import * as serviceWorker from './serviceWorker';
-import { AUTH_TOKEN } from "./constants";
+import * as serviceWorker from './serviceWorker'
 import './i18n';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCheckSquare, faTachometerAlt, faUserAstronaut, faRocket, faCalendarAlt, faAlignLeft } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fab, faCheckSquare, faTachometerAlt, faUserAstronaut, faRocket, faCalendarAlt, faAlignLeft )
+
+const { history, store } = configureStore({})
 
 ReactDOM.render(
-    <BrowserRouter>
-        <Suspense fallback={(<div>Loading</div>)}>
-            <App />
-        </Suspense>
-    </BrowserRouter>,
+    <Provider store={store}>
+        <ConnectedRouter history={history}>
+            <BrowserRouter>
+                <Suspense fallback={(<div>Loading</div>)}>
+                    <App />
+                </Suspense>
+            </BrowserRouter>
+        </ConnectedRouter>
+    </Provider>,
     document.getElementById('root')
 )
 

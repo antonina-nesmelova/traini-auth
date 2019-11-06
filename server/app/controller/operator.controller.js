@@ -1,46 +1,53 @@
 const db = require('../config/db.config.js')
-const Customer = db.customers
+const Operator = db.operators
 
-// Post a Customer
-exports.create = (req, res) => {
+// Post a Operator
+module.exports.create = (req, res) => {
+	console.log(req)
 	// Save to MySQL database
-	Customer.create({
+	Operator.create({
 		name: req.body.name,
-		birthDate: req.body.birthDate,
-		email: req.body.email
-	}).then(customer => {
-		// Send created customer to client
-		res.send(customer)
+		email: req.body.email,
+		password: req.body.password,
+	}).then(operator => {
+		// Send created operator to client
+		res.send(operator)
 	})
 }
 
-// FETCH all Customers
-exports.findAll = (req, res) => {
-	Customer.findAll().then(customers => {
-		// Send all customers to Client
-		res.send(customers)
+// Find a Customer by Id
+module.exports.findById = (req, res) => {
+	Operator.findById(req.params.operatorId).then(operator => {
+		res.send(operator)
 	})
 }
 
-// Update a Customer
-exports.update = (req, res) => {
-	const id = req.params.customerId
-	Customer.update({
+// FETCH all Operators
+module.exports.findAll = (req, res) => {
+	Operator.findAll().then(operators => {
+		// Send all operators to Client
+		res.send(operators)
+	})
+}
+
+// Update a Operator
+module.exports.update = (req, res) => {
+	const id = req.params.operatorId
+	Operator.update({
 		name: req.body.name,
-		birthDate: req.body.birthDate,
 		email: req.body.email
 	},
-	{ where: { id: req.params.customerId } }).then(() => {
-		res.status(200).send('updated successfully a customer with id = ' + id)
+	{ where: { id: req.params.operatorId } }).then(() => {
+		res.status(200).send('updated successfully a operator with id = ' + id)
 	})
 }
 
-// Delete a Customer by Id
-exports.delete = (req, res) => {
-	const id = req.params.customerId
-	Customer.destroy({
+// Delete a Operator by Id
+module.exports.delete = (req, res) => {
+	const id = req.params.operatorId
+	Operator.destroy({
 		where: { id: id }
 	}).then(() => {
-		res.status(200).send('deleted successfully a customer with id = ' + id)
+		res.status(200).send('deleted successfully a operator with id = ' + id)
 	})
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { withTranslation } from "react-i18next";
+import { withTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 class SideBarItem extends Component {
 
@@ -9,7 +9,7 @@ class SideBarItem extends Component {
 		const { t, item } = this.props;
 
 		return (
-			<li key={item.name} className="sidebar-list-item">
+			<li className="sidebar-list-item">
 				<Link
 					to={`/operator/account/${item.name}`}
 					className={`sidebar-link text-muted py-4 ${item.active ? 'active' : ''}`}>

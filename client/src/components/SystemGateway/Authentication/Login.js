@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { AUTH_TOKEN } from '../../constants'
+import { AUTH_TOKEN } from '../../../constants'
 import { Link } from "react-router-dom";
 import { withTranslation } from 'react-i18next';
-import Header from "./Header";
+import Header from "../Header";
 
 class Login extends Component {
     state = {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {AUTH_TOKEN} from "../../constants";
+import {AUTH_TOKEN} from '../../../constants';
 import { withTranslation } from 'react-i18next';
 
 class LogoutButton extends Component {
@@ -15,7 +15,7 @@ class LogoutButton extends Component {
 						className="ml1 pointer black"
 						onClick={() => {
 							localStorage.removeItem(AUTH_TOKEN)
-							this.props.history.push(`/`)
+							this.props.history.push('/')
 						}}
 					>
 						{t('login.logout')}

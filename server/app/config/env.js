@@ -1,9 +1,9 @@
 const env = {
-	database: 'testdb',
+	database: 'spacefidesdb',
 	username: 'root',
 	password: 'root',
 	host: 'localhost',
-	port: '3307',
+	port: '3306',
 	dialect: 'mysql',
 	pool: {
 		min: 0,
