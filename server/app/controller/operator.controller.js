@@ -6,9 +6,9 @@ module.exports.create = (req, res) => {
 	console.log(req)
 	// Save to MySQL database
 	Operator.create({
-		name: req.body.name,
-		email: req.body.email,
-		password: req.body.password,
+		name: req.body.user.name,
+		email: req.body.user.email,
+		password: req.body.user.password,
 	}).then(operator => {
 		// Send created operator to client
 		res.send(operator)

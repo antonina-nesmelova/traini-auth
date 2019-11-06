@@ -11,9 +11,11 @@ const responseBody = res => res.body;
 let token = null;
 
 const axiosInstance = axios.create({
-  baseURL: 'localhost:8081',
+  baseURL: 'http://localhost:8081',
   timeout: 1000,
-  headers: {'Authorization': 'Bearer '+ token}
+  headers: {
+    'Authorization': 'Bearer '+ token
+  }
 });
 
 const requests = {
@@ -27,21 +29,22 @@ const requests = {
     axiosInstance.post(`${url}`, body).then(responseBody)
 };
 
+const Auth = {
+  current: () =>
+      requests.get('/user'),
+  login: (email, password) =>
+      requests.post('/users/login', { user: { email, password } }),
+  register: (name, email, password) =>
+      requests.post('/api/operators', { user: { name, email, password } }),
+  save: user =>
+      requests.put('/user', { user })
+};
+
 export default {
+  Auth,
   setToken: _token => { token = _token; }
 };
 
-//
-// const Auth = {
-//   current: () =>
-//     requests.get('/user'),
-//   login: (email, password) =>
-//     requests.post('/users/login', { user: { email, password } }),
-//   register: (username, email, password) =>
-//     requests.post('/users', { user: { username, email, password } }),
-//   save: user =>
-//     requests.put('/user', { user })
-// };
 //
 // const Tags = {
 //   getAll: () => requests.get('/tags')
